@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-//Change DB name according to exam
+//TODO Change DB name according to exam
 const CONNECTION_STRING = 'mongodb://localhost:27017/scaffoldDb';
 
 module.exports = async (app) => {
