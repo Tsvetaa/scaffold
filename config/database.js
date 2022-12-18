@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
-//TODO Change DB name according to exam
-const CONNECTION_STRING = 'mongodb://localhost:27017/scaffoldDb';
+const CONNECTION_STRING = 'mongodb://localhost:27017/mindBlogPractice';
 
 module.exports = async (app) => {
     try {

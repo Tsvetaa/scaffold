@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog Page</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <div class="navigation">
+        <nav>
+            <img src="./images/logo.jpg">
+            <ul>
+                <!-- Guest users and Logged users -->
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Blogs</a></li>
+                <!--For guest users-->
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Register</a></li>
+                <!--For loggin users-->
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Create Blog</a></li>
+                <li><a href="#">Logout</a></li>
+
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+
+        <section id="all-blogs-page">
+            <article class="all-blogs-title">
+                <h1>All Blogs</h1>
+            </article>
+
+            <!--If there are blogs in the database, show each one-->
+            <article class="all-blogs-card">
+                <article class="all-blogs-card-image">
+                    <!-- Do not forget to change the path to the image -->
+                    <img src="./images/the-greatest-sales-letter-of-all-time.jpg" alt="blogs-icon">
+                </article>
+
+                <article class="all-blogs-card-content">
+                    <!--You must put the headline value in <h2>-->
+                    <h2>The Greatest Sales Letter of All Time</h2>
+                    <!--You must put the headline value in <h3>-->
+                    <h3>Copywriting</h3>
+                </article>
+
+                <article class="all-blogs-card-buttons">
+                    <a href="#" class="btn-details">Details</a>
+                </article>
+            </article>
+
+            <article class="all-blogs-card">
+                <article class="all-blogs-card-image">
+                    <!-- Do not forget to change the path to the image -->
+                    <img src="./images/around-the-world.jpeg" alt="blogs-icon">
+                </article>
+
+                <article class="all-blogs-card-content">
+                    <!--You must put the headline value in <h2>-->
+                    <h2>Around the Weekend</h2>
+                    <!--You must put the headline value in <h3>-->
+                    <h3>Women's Health</h3>
+                </article>
+
+                <article class="all-blogs-card-buttons">
+                    <a href="#" class="btn-details">Details</a>
+                </article>
+            </article>
+
+            <!--If there are still no blogs in the database display:-->
+            <!--<article class="not-available-blogs">
+                <h1>No blogs created yet.</h1>
+            </article>-->
+
+        </section>
+    </main>
+
+    <footer>Back-End 2022</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details Page</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <div class="navigation">
+        <nav>
+            <img src="./images/logo.jpg">
+            <ul>
+                <!-- Guest users and Logged users -->
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Blogs</a></li>
+                <!--For guest users-->
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Register</a></li>
+                <!--For loggin users-->
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Create Blog</a></li>
+                <li><a href="#">Logout</a></li>
+
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <div class="details-container">
+            <div class="details-container-image">
+                <img src="./images/around-the-world.jpeg">
+            </div>
+            <div class="details-container-info">
+                <h2>Around the Weekend</h2>
+                <h3>Women's Health</h3>
+                    <h3>By: peter@abv.bg</h3>
+                    <!--If there are followers-->
+                    <h4>Follow By: jace.m, sandra.p</h4>
+                    <!--If there are no followers-->
+                    <h4>There are no followers yet!</h4>
+            </div>
+            <div class="details-container-content">
+                <p>Hi friends! How was the weekend? I hope you had an amazing one. This blog post is a way to bring it back old school and share some more real-life adventures. Quite a few of you let me know that you missed the style of blogging from the past (I do, too!) so I'm trying to do it in a way that's low-key and still focused on my experience, instead of the kids' experience if that makes sense? It can be tricky because the kids are obviously a huge part of my life (and by far the most exciting and such an enjoyable part of my life). I'm still trying to navigate blogging in a way that feels authentic to me without overdoing it on kid content, while continuing to create value-driven posts, too.</p>
+            </div>
+            <div class="btn-container">
+                <!-- Only for registered user and creator of the blog post-->
+                <a href="#">Edit</a>
+                <a href="#">Delete</a>
+                <!-- logged in user who has not yet followed the blog-->
+                <a href="#">Follow</a>
+                <!-- logged in user who has already followed the blog-->
+                <p class="follow-pub">You already follow this blog!</p>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer>Back-End 2022</footer>
+</body>
+
+</html>
