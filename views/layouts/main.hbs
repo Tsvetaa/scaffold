@@ -10,32 +10,44 @@
 </head>
 
 <body>
+    <!-- In case of error, you should display div with class "errorContainer" -->
+    <!-- You can choose to display the first error or all of them (error message/s in your opinion) -->
+    {{#if errors}}
+    <div>
+        <div class="errorContainer">
+            {{#each errors}}
+            <p>{{this}}</p>
+            {{/each}}
+        </div>
+    </div>
+    {{/if}}
+
     <div class="navigation">
         <nav>
             <img src="/static/images/logo.jpg">
-            <ul>  
+            <ul>
                 {{#if username}}
                 <!-- Guest users and Logged users -->
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Blogs</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/catalog">Blogs</a></li>
                 <!--For loggin users-->
                 <li><a href="#">Profile</a></li>
-                <li><a href="#">Create Blog</a></li>
-                <li><a href="#">Logout</a></li>
+                <li><a href="/blog/create">Create Blog</a></li>
+                <li><a href="/auth/logout">Logout</a></li>
                 {{else}}
                 <!-- Guest users and Logged users -->
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Blogs</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/catalog">Blogs</a></li>
                 <!--For guest users-->
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Register</a></li>
+                <li><a href="/auth/login">Login</a></li>
+                <li><a href="/auth/register">Register</a></li>
                 {{/if}}
             </ul>
         </nav>
     </div>
 
     <main>
-       {{{body}}}
+        {{{body}}}
     </main>
 
     <footer>Back-End 2022</footer>

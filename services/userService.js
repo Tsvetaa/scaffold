@@ -6,7 +6,7 @@ const User = require('../models/User');
 const JWT_SECRET = 'SuperSecret';
 
 
-async function register(username, password) {
+async function register(username, email, password) {
     const existing = await User.findOne({ username }).collation({ locale: 'en', strength: 2 });
     if (existing) {
         throw new Error('Username is taken');
@@ -16,33 +16,34 @@ async function register(username, password) {
 
     const user = await User.create({
         username,
+        email,
         hashedPassword
     });
 
-    //TODO see assigment if registartion creates user session 
     return createSession(user);
 }
 
-async function login(username, password) {
-    const user = await User.findOne({ username }).collation({ locale: 'en', strength: 2 });
+async function login(email, password) {
+    const user = await User.findOne({ email }).collation({ locale: 'en', strength: 2 });
     if (!user) {
-        throw new Error('Incorrect username or password');
+        throw new Error('Wrong User or Passowrd');
     }
 
     const hasMatch = await bcrypt.compare(password, user.hashedPassword);
 
     if (hasMatch == false) {
-        throw new Error('Incorect username or password')
+        throw new Error('Wrong User or Passowrd');
     }
 
     return createSession(user);
 
 }
 
-function createSession({ _id, username }) {
+function createSession({ _id, username, email }) {
     const payload = {
         _id,
-        username
+        username, 
+        email
     }
 
     return jwt.sign(payload, JWT_SECRET);
@@ -56,5 +57,4 @@ module.exports = {
     register,
     login,
     verifyToken
-
 };
